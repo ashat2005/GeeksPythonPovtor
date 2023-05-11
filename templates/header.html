@@ -11,18 +11,17 @@
                 
                     <!-- Info List -->
                     <ul class="info-list">
-                        <li><span>Call Us:</span><a href="tel:+123-456-7890"> +1 (800) 123-4567</a></li>
-                        <li><span>Email Us:</span><a href="mailto:info@yourcompany.com"> info@yourcompany.com</a></li>
+                        <li><span>Контакты:</span><a href="tel:+123-456-7890"> +996704646665</a></li>
+                        <li><span>Email:</span><a href="mailto:info@yourcompany.com"> info@gmail.com</a></li>
                     </ul>
-                    
                 </div>
                 
                 <!-- Top Right -->
                 <div class="top-right pull-right clearfix">
                     <!-- Login Nav -->
                     <ul class="login-nav">
-                        <li><a href="login.html">Log In</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><a href="login.html">Войти</a></li>
+                        <li><a style="background-color:rgb(255, 255, 0) ;" href="register.html">Регистрация</a></li>
                     </ul>
                 </div>
                 
@@ -36,7 +35,7 @@
             <div class="clearfix">
                 
                 <div class="pull-left logo-box">
-                    <div class="logo"><a href="index.html"><img src="{% static 'images/logo.png' %}" alt="" title="Bootcamp"></a></div>
+                    <div class="logo"><a href="{% url 'index' %}"><img src="{{ setting.logo.url }}" width="250px" alt="" title="Bootcamp"></a></div>
                 </div>
                    
                    <div class="nav-outer clearfix">
@@ -56,7 +55,7 @@
                             <ul class="navigation clearfix">
                                 <li class="current dropdown"><a href="#">Домой</a>
                                     <ul>
-                                        <li><a href="index.html">Домой</a></li>
+                                        <li><a href="{% url 'index' %}">Домой</a></li>
                                         <!-- <li><a href="index-2.html">Home Page 02</a></li>
                                         <li><a href="index-3.html">Home Page 03</a></li> -->
                                     </ul>

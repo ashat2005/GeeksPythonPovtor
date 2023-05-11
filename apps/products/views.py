@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from apps.setting.models import Setting
 from apps.products.models import Products
+from apps.setting.models import Setting
 # Create your views here.
-def index(request):
+def product_detail(request, id):
     setting = Setting.objects.latest('id')
-    products = Products.objects.all()
+    product = Products.objects.get(id = id)
     context = {
         'setting': setting,
-        'products':products,
+        'product': product,
     }
-    return render(request,'index.html', context)    
+    return render(request, 'index.html', context)

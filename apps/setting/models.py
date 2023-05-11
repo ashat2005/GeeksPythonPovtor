@@ -12,10 +12,8 @@ class Setting(models.Model):
     logo = models.ImageField(
         upload_to="logo/"
     )
-    photo = models.ImageField(
-        upload_to="photo_image_index/",
-        verbose_name="Обои на страницу"
-    )
+    
+
     def __str__(self) -> str:
         return self.title
     class Meta:
