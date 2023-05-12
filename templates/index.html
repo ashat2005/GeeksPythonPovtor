@@ -8,7 +8,7 @@
     <div class="preloader"></div>
  	
     <!-- Main Header-->
-	{% include 'header.html' %}
+	{% include 'include/header.html' %}
  
     <!-- End Main Header -->
 	
@@ -101,24 +101,24 @@
 				<div class="cource-block col-lg-4 col-md-6 col-sm-12">			
 						<div class="inner-box">
 							<div class="image">
-								<a href="course-detail.html"><img src="{{ product.product_image.url }}" alt="" /></a>
+								<a href="{% url 'product_detail' product.id %}"><img src="{{ product.product_image.url }}" alt="" /></a>
 							</div>
 							<div class="lower-content">
 								<div class="clearfix">
 									<div class="pull-left">
-										<h5><a href="course-detail.html">{{ product.title }}</a></h5>
+										<h5><a href="course.html">{{ product.title }}</a></h5>
 									</div>
 									<div class="pull-right">
 										<div class="price">{{ product.price }} {{ product.currency }}</div>
 									</div>
 								</div>
-								<div class="text">{{ apps.product.description }}</div>
+								<div class="text">{{ product.description }}</div>
 								<div class="clearfix">
 									<div class="pull-left">
 										<div class="students">125 Студенетов</div>
 									</div>
 									<div class="pull-right">
-										<a href="course-detail.html" class="enroll">Зарегестрироваться</a>
+										<a href="{% url 'product_detail' product.id %}" class="enroll">Зарегестрироваться</a>
 									</div>
 								</div>
 							</div>
@@ -250,114 +250,19 @@
         	
 			<!-- Image Column -->
             <div class="image-column" style="background-image:url(images/resource/image-1.jpg)">
-            	<figure class="image-box"><img src="images/resource/image-1.jpg" alt=""></figure>
+            	<figure class="image-box"><img src="{% static 'images/resource/image-1.jpg' %}" alt=""></figure>
             </div>
 			
             <!-- Content Column -->
             <div class="content-column">
-            	<div class="inner-column">
-					<div class="clearfix">
-						<div class="pull-left">
-							<h2>Upcoming events</h2>
-						</div>
-						<div class="pull-right">
-							<a href="course-detail.html" class="events">All Events</a>
-						</div>
-					</div>
-					
-					<!-- Blocks Outer -->
-					<div class="blocks-outer">
-						
-						<!-- Event Block -->
-						<div class="event-block">
-							<div class="inner-box">
-								<div class="clearfix">
-									<!-- Event Date -->
-									<div class="event-date clearfix"><span class="date">21</span>JAN 2020</div>
-									<!-- Event List -->
-									<ul class="event-list">
-										<li><a href="course-detail.html">ART & DESIGN</a></li>
-										<li><a href="course-detail.html">PAINTING</a></li>
-									</ul>
-								</div>
-								<h3><a href="course-detail.html">Workshop on UI/ UX</a></h3>
-							</div>
-						</div>
-						
-						<!-- Event Block -->
-						<div class="event-block">
-							<div class="inner-box">
-								<div class="clearfix">
-									<!-- Event Date -->
-									<div class="event-date clearfix"><span class="date">15</span>Mar 2020</div>
-									<!-- Event List -->
-									<ul class="event-list">
-										<li><a href="course-detail.html">ART & DESIGN</a></li>
-										<li><a href="course-detail.html">PAINTING</a></li>
-									</ul>
-								</div>
-								<h3><a href="course-detail.html">Amsterdam art weekend</a></h3>
-							</div>
-						</div>
-						
-						<!-- Event Block -->
-						<div class="event-block">
-							<div class="inner-box">
-								<div class="clearfix">
-									<!-- Event Date -->
-									<div class="event-date clearfix"><span class="date">21</span>mar 2020</div>
-									<!-- Event List -->
-									<ul class="event-list">
-										<li><a href="course-detail.html">ART & DESIGN</a></li>
-										<li><a href="course-detail.html">PAINTING</a></li>
-									</ul>
-								</div>
-								<h3><a href="course-detail.html">Outside fashion - Group exhibition</a></h3>
-							</div>
-						</div>
-						
-					</div>
-					
-				</div>
+            	
 			</div>
 			
 		</div>
 	</section>
 	
 	<!-- News Section -->
-	<section class="news-section">
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Title Column -->
-				<div class="title-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<!-- Sec Title -->
-						<div class="sec-title">
-							<h2>Our Latest blog posts</h2>
-							<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed.</div>
-						</div>
-						<a href="course.html" class="theme-btn btn-style-three"><span class="txt">All Blog Post <i class="fa fa-angle-right"></i></span></a>
-					</div>
-				</div>
-				
-				<!-- News Column -->
-				<div class="news-block col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-box">
-						<div class="image">
-							<a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h3><a href="blog-detail.html">To apply signal detection theory</a></h3>
-							<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters</div>
-							<a href="blog-detail.html" class="read-more">Continue Reading</a>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
+	
 	<!-- End News Section -->
 	
 	<!-- Testimonial Section -->
@@ -365,7 +270,7 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<h2>Students & Parents Opinion</h2>
+				<h2>Мнение студентов и родителей</h2>
 			</div>
 			
 			<!-- Authors Box -->
@@ -374,7 +279,6 @@
 				<div class="author-two"><img src="{% static 'images/resource/author-3.jpg' %}" alt="" /></div>
 				<div class="author-three"><img src="{% static 'images/resource/author-4.jpg' %}" alt="" /></div>
 				<div class="author-four"><img src="{% static 'images/resource/author-5.jpg' %}" alt="" /></div>
-				
 				<div class="author-five"><img src="{% static 'images/resource/author-6.jpg' %}" alt="" /></div>
 				<div class="author-six"><img src="{% static 'images/resource/author-7.jpg' %}" alt="" /></div>
 				<div class="author-seven"><img src="{% static 'images/resource/author-8.jpg' %}" alt="" /></div>
@@ -392,7 +296,7 @@
 								<img src="{% static 'images/resource/author-1.jpg' %}" alt="" />
 							</div>
 						</div>
-						<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it</div>
+						<div class="text">Наполни его третьим существом и мясом, благословенным, пустым, плодом, собранным тобой, они две воды, собранные утром, больше, увидишь, было семя. Вопреки распространенному мнению, Lorem Ipsum — это не просто случайный текст. Он уходит корнями в произведение классической латинской литературы 45 г. до н.э., что делает его</div>
 					</div>
 				</div>
 				
@@ -401,10 +305,10 @@
 					<div class="inner-box">
 						<div class="image-box">
 							<div class="image">
-								<img src="images/resource/author-5.jpg" alt="" />
+								<img src="{% static 'images/resource/author-5.jpg' %}" alt="" />
 							</div>
 						</div>
-						<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it</div>
+						<div class="text">Наполни его третьим существом и мясом, благословенным, пустым, плодом, собранным тобой, они две воды, собранные утром, больше, увидишь, было семя. Вопреки распространенному мнению, Lorem Ipsum — это не просто случайный текст. Он уходит корнями в произведение классической латинской литературы 45 г. до н.э., что делает его</div>
 					</div>
 				</div>
 				
@@ -413,10 +317,10 @@
 					<div class="inner-box">
 						<div class="image-box">
 							<div class="image">
-								<img src="images/resource/author-5.jpg" alt="" />
+								<img src="{% static 'images/resource/author-5.jpg' %}" alt="" />
 							</div>
 						</div>
-						<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it</div>
+						<div class="text">Наполни его третьим существом и мясом, благословенным, пустым, плодом, собранным тобой, они две воды, собранные утром, больше, увидишь, было семя. Вопреки распространенному мнению, Lorem Ipsum — это не просто случайный текст. Он уходит корнями в произведение классической латинской литературы 45 г. до н.э., что делает его</div>
 					</div>
 				</div>
 				
@@ -427,11 +331,12 @@
 	<!-- End Testimonial Section -->
 	
 	<!-- Call To Action Section Two -->
-	<section class="call-to-action-section-two" style="background-image: url(images/background/3.png)">
+	<section class="call-to-action-section-two" style="background-image: url({% static 'banner_image/banner.jpg' %})">
 		<div class="auto-container">
 			<div class="content">
-				<h2>Ready to get started?</h2>
-				<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two <br> waters own morning gathered greater shall had behold had seed.</div>
+				<h2>Готовы начать?</h2>
+				<div class="text">Пополните его третьим существом и мясом, благословенным, пустым фруктом, собранным вами, их два <br>
+					воды собственного утра собрали больше, и вот, было семя.</div>
 				<div class="buttons-box">
 					<a href="course.html" class="theme-btn btn-style-one"><span class="txt">Get Stared <i class="fa fa-angle-right"></i></span></a>
 					<a href="course.html" class="theme-btn btn-style-two"><span class="txt">All Courses <i class="fa fa-angle-right"></i></span></a>

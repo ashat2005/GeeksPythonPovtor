@@ -9,4 +9,4 @@ def product_detail(request, id):
         'setting': setting,
         'product': product,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'course.html', context)
