@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from apps.products.models import Products
 from apps.setting.models import Setting
 # Create your views here.
@@ -9,4 +9,10 @@ def product_detail(request, id):
         'setting': setting,
         'product': product,
     }
+    return render(request, 'course-detail.html', context)
+def course(request):
+    course = Products.objects.all()
+    context = {
+        'course' : course
+    }    
     return render(request, 'course.html', context)

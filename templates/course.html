@@ -1,4 +1,4 @@
-{% extends 'homepage.html' %}
+{% extends 'course/homepage.html' %}
 {% load static %}
 {% block content %}
 <div class="page-wrapper">
@@ -7,26 +7,16 @@
     <div class="preloader"></div>
  	
     <!-- Main Header-->
-	{% include 'include2/header.html' %}
-    
+	{% include 'course/header.html' %}
+
     <!-- End Main Header -->
 	
 	<!-- Page Title -->
     <section class="page-title">
         <div class="auto-container">
-			<h1>Courses</h1>
+			<h1 style="color: black;">Courses</h1>
 			
 			<!-- Search Boxed -->
-			<div class="search-boxed">
-				<div class="search-box">
-					<form method="post" action="contact.html">
-						<div class="form-group">
-							<input type="search" name="search-field" value="" placeholder="What do you want to learn?" required>
-							<button type="submit"><span class="icon fa fa-search"></span></button>
-						</div>
-					</form>
-				</div>
-			</div>
 			
         </div>
     </section>
@@ -49,57 +39,42 @@
 						<div class="options-view">
 							<div class="clearfix">
 								<div class="pull-left">
-									<h3>Browse UI/ UX Courses</h3>
+									<h3>Все курсы</h3>
 								</div>
-								<div class="pull-right clearfix">
-									<!-- List View -->
-									<ul class="list-view">
-										<li class="active"><a href="course.html"><span class="icon flaticon-grid"></span></a></li>
-										<li><a href="course-list.html"><span class="icon flaticon-list-1"></span></a></li>
-									</ul>
-									
-									<!-- Type Form -->
-									<div class="type-form">
-										<form method="post" action="index.html">
-											
-											<!-- Form Group -->
-											<div class="form-group">
-												<select class="custom-select-box">
-													<option>Newest</option>
-													<option>Old</option>
-												</select>
-											</div>
-											
-										</form>
-									</div>
-									
-								</div>
+								
 							</div>
 						</div>
 						
 						<div class="row clearfix">
 							
 							<!-- Cource Block Two -->
+							{% for course in course %}
 							<div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
 								<div class="inner-box">
 									<div class="image">
-										<a href="course-detail.html"><img src="{{ product.product_image.url }}" alt="" /></a>
+										<a href="course-detail.html"><img src="{{course.product_image.url}}" alt="" /></a>
 									</div>
 									<div class="lower-content">
-										<h5><a href="course-detail.html">{{ product.title }}</a></h5>
-										<div class="text">{{ product.description }}</div>
+										<h5><a href="course-detail.html">{{course.title}}</a></h5>
+										<div class="text">{{course.description | truncatewords:18}}</div>
 										<div class="clearfix">
+											{% if students %}
 											<div class="pull-left">
-												<div class="students">12 лектор</div>
+												<div class="students">{{prodect.students}}</div>
 											</div>
-											<div class="pull-right">
-												<div style="  
-													color: black;" class="hours">54 часа</div>
+											{% else %}
+											<div class="pull-left">
+												<div class="students">никого нет</div>
 											</div>
+											{% endif %}
+											
 										</div>
 									</div>
 								</div>
 							</div>
+							{% endfor %}
+							
+							
 						</div>
 						
 					</div>
@@ -107,112 +82,28 @@
 				</div>
 				
 				<!-- Sidebar Side -->
-                <div class="sidebar-side col-lg-3 col-md-12 col-sm-12">
-					<div class="sidebar-inner">
-						<aside class="sidebar">
-							
-							<!-- Filter Widget -->
-							
-							
-						</aside>
-					</div>
-				</div>
+                
 				
 			</div>
 			
 			<!-- Post Share Options -->
 			
-			
 		</div>
 	</div>
 	
 	<!-- Popular Courses -->
-	<section class="popular-courses-section">
-		<div class="auto-container">
-			<div class="sec-title">
-				<h2>Most Popular Courses</h2>
-			</div>
-			
-			<div class="row clearfix">
-				
-				<!-- Cource Block Two -->
-				<div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="images/resource/course-15.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h5><a href="course-detail.html">Color Theory</a></h5>
-							<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="students">12 Lecturer</div>
-								</div>
-								<div class="pull-right">
-									<div class="hours">54 Hours</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Cource Block Two -->
-				<div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="images/resource/course-16.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h5><a href="course-detail.html">Typography</a></h5>
-							<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="students">12 Lecturer</div>
-								</div>
-								<div class="pull-right">
-									<div class="hours">54 Hours</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Cource Block Two -->
-				<div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="images/resource/course-17.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h5><a href="course-detail.html">Wireframe & Prototyping</a></h5>
-							<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="students">12 Lecturer</div>
-								</div>
-								<div class="pull-right">
-									<div class="hours">54 Hours</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			
-		</div>
-	</section>
+
 	<!-- End Popular Courses -->
 	
 	<!-- Call To Action Section Two -->
-	<section class="call-to-action-section-two" style="background-image: url(images/background/3.png)">
+	<section class="call-to-action-section-two" style="background-image: url({% static 'banner_image/banner2.jpg' %})">
 		<div class="auto-container">
 			<div class="content">
-				<h2>Ready to get started?</h2>
-				<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two <br> waters own morning gathered greater shall had behold had seed.</div>
+				<h2 style="color: black;">Готовы начать?</h2>
+				<div class="text" style="color: black;">Пополните его третьим существом и мясом, благословенным, пустым фруктом, собранным вами, их два <br>воды собственного утра собрали больше, и вот, было семя.</div>
 				<div class="buttons-box">
-					<a href="course.html" class="theme-btn btn-style-one"><span class="txt">Get Stared <i class="fa fa-angle-right"></i></span></a>
-					<a href="course.html" class="theme-btn btn-style-two"><span class="txt">All Courses <i class="fa fa-angle-right"></i></span></a>
+					<a href="course.html" class="theme-btn btn-style-one"><span class="txt">Смотреть<i class="fa fa-angle-right"></i></span></a>
+					<a href="course.html" class="theme-btn btn-style-two"><span class="txt">Курсы<i class="fa fa-angle-right"></i></span></a>
 				</div>
 			</div>
 		</div>
@@ -240,7 +131,7 @@
 									<div class="logo">
                                     	<a href="index.html"><img src="images/footer-logo.png" alt="" /></a>
                                     </div>
-									<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater.</div>
+									<div class="text">Пополни его третья тварь, и мясо благословит пустоту, плод, собранный тобой, они две воды собственного утра собрали больше.</div>
 									<div class="social-box">
 										<a href="#" class="fa fa-facebook"></a>
 										<a href="#" class="fa fa-instagram"></a>
@@ -255,13 +146,9 @@
 							<!--Footer Column-->
                             <div class="footer-column col-lg-5 col-md-6 col-sm-12">
                                 <div class="footer-widget links-widget">
-									<h4>About Us</h4>
+									<h4>О нас</h4>
 									<ul class="links-widget">
-										<li><a href="#">Afficiates</a></li>
-										<li><a href="#">Partners</a></li>
-										<li><a href="#">Reviews</a></li>
-										<li><a href="#">Blogs</a></li>
-										<li><a href="#">Newsletter</a></li>
+										<li>Мы - команда специалистов, предоставляющая разнообразные услуги. Наш опыт и профессионализм позволяют нам эффективно решать задачи наших клиентов. Мы стремимся удовлетворить потребности наших заказчиков, предлагая индивидуальный подход и качественное выполнение работ. Наша цель - обеспечить высокий уровень удовлетворенности клиентов и установить долгосрочные партнерские отношения.</li>
 									</ul>
 								</div>
 							</div>
@@ -276,13 +163,10 @@
 							<!--Footer Column-->
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget links-widget">
-									<h4>Resource</h4>
+									<h4>Ресурс</h4>
 									<ul class="links-widget">
-										<li><a href="#">Privacy Policy</a></li>
-										<li><a href="#">Support Area</a></li>
-										<li><a href="#">Documentations</a></li>
-										<li><a href="#">How it works</a></li>
-										<li><a href="#">Terms of Policy</a></li>
+										<li>
+											"Программист - это специалист, который создает программы и приложения для компьютеров и мобильных устройств. Он владеет несколькими языками программирования, такими как Java, Python или C++. Программисты часто работают в командах разработчиков, используя инструменты и технологии, чтобы создавать инновационные решения. Ключевыми навыками программиста являются аналитическое мышление, умение решать проблемы и внимание к деталям. Программисты востребованы на рынке труда и могут рассчитывать на высокую заработную плату и перспективы карьерного роста."</li>
 									</ul>
 								</div>
 							</div>
@@ -290,9 +174,9 @@
 							<!--Footer Column-->
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget links-widget">
-									<h4>Quick Links</h4>
+									<h4>Быстрые ссылки</h4>
 									<ul class="links-widget">
-										<li><a href="#">home</a></li>
+										<li><a href="{% url 'index' %}">home</a></li>
 										<li><a href="#">About us</a></li>
 										<li><a href="#">Features</a></li>
 										<li><a href="#">Pricing</a></li>
@@ -315,4 +199,5 @@
 
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
+
 {% endblock %}

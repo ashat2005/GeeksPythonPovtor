@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.setting',
     'apps.products',
     'apps.product_info',
+    'apps.contacts',
 ]
 
 MIDDLEWARE = [

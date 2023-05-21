@@ -33,6 +33,10 @@ class Products(models.Model):
         related_name="product_currency",
         verbose_name="Название валюты"
     )
+    students = models.IntegerField(
+        verbose_name="Количество студентов",
+        blank=True,null=True
+    )
     def __str__(self) -> str:
         return self.title
     class Meta:

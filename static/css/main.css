@@ -243,7 +243,7 @@ img{
 	overflow: hidden;
 	background: none;
 	border-radius:50px;
-	background-color:#000000;
+	background-color:#f6ff00;
 	text-transform: capitalize;
 	font-family: 'Poppins', sans-serif;
 	box-shadow:0px 5px 10px rgba(0,0,0,0.10);
@@ -979,7 +979,7 @@ img{
 
 .main-header .header-top .login-nav li a{
 	position:relative;
-	color:#f6ff00;
+	color:#000000;
 	font-size:14px;
 	font-weight:600;
 	display:inline-block;
@@ -1570,7 +1570,7 @@ img{
 .main-menu .navigation > li > ul > li > ul > li:hover > a{
 	color:#ffffff;
 	padding-left:30px;
-	background:#ffff00;
+	background:#ffffff;
 }
 
 .main-menu .navigation > li > ul > li > ul > li.dropdown > a:after{
@@ -2812,7 +2812,10 @@ img{
 	background-position:center center;
 	background-size:cover;	
 }
-
+.pustota{
+	width: -600px;
+	height: -100px;
+}
 .fluid-section-one .image-column .image-box{
 	position:relative;
 	display:none;	
@@ -6026,7 +6029,7 @@ img{
 	position:relative;
 	text-align:center;
 	padding:220px 0px 0px;
-	background-color:#075e89;
+	background-color:#f0f5fb;
 }
 
 .page-title.style-two{
@@ -6041,7 +6044,7 @@ img{
 }
 
 .page-title .search-boxed{
-	position:relative;
+	/* position:relative;
 	padding:40px 70px;
 	border-radius:25px;
 	max-width:970px;
@@ -6050,7 +6053,7 @@ img{
 	z-index:1;
 	margin-bottom:-50px;
 	background-color:#ffffff;
-	box-shadow:0px 0px 30px rgba(0,0,0,0.05);
+	box-shadow:0px 0px 30px rgba(0,0,0,0.05); */
 }
 
 .page-title .search-box .form-group{
