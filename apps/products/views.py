@@ -1,24 +1,18 @@
 from django.shortcuts import render, redirect
+
 from apps.products.models import Products,Contact
 from apps.setting.models import Setting
 # Create your views here.
 def product_detail(request, id):
     setting = Setting.objects.latest('id')
     product = Products.objects.get(id = id)
-    context = {
-        'setting': setting,
-        'product': product,
-    }
-    return render(request, 'course-detail.html', context)
+    return render(request, 'course-detail.html', locals())
+
 def course(request):
+    setting = Setting.objects.latest('id')
     course = Products.objects.all()
-    context = {
-        'course' : course
-    }    
-    return render(request, 'course.html', context)
+    return render(request, 'course.html', locals())
+
 def contact(request):
     contact = Contact.objects.all()
-    context = {
-        "contact" : contact
-    }
-    return render(request,'contact.html',context)
+    return render(request,'contact.html',locals())
