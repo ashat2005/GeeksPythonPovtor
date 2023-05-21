@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     #apps
     'apps.setting',
     'apps.products',
-    'apps.product_info',
     'apps.contacts',
 ]
 

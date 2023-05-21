@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.products.models import Products
+from apps.products.models import Products,Contact
 from apps.setting.models import Setting
 # Create your views here.
 def product_detail(request, id):
@@ -16,3 +16,9 @@ def course(request):
         'course' : course
     }    
     return render(request, 'course.html', context)
+def contact(request):
+    contact = Contact.objects.all()
+    context = {
+        "contact" : contact
+    }
+    return render(request,'contact.html',context)
