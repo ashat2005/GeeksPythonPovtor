@@ -12,7 +12,10 @@ class Setting(models.Model):
     logo = models.ImageField(
         upload_to="logo/"
     )
-    
+    students = models.IntegerField(
+        verbose_name="Количество студентов",
+        blank=True,null=True
+    )
 
     def __str__(self) -> str:
         return self.title
