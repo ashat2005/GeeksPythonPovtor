@@ -40,3 +40,24 @@ class Setting(models.Model):
     class Meta:
         verbose_name = "Настройка"
         verbose_name_plural = "Настройки"
+class Achievements(models.Model):
+    course = models.CharField(
+        max_length=255,
+        verbose_name="Всего курсов",
+        blank=True,null=True
+    )
+    students = models.CharField(
+        max_length=255,
+        verbose_name="Всего студентов",
+        blank=True,null=True
+    )
+    positions = models.CharField(
+        max_length=255,
+        verbose_name="Глобальная позиция",
+        blank=True,null=True
+    )
+    def __str__(self) -> str:
+        return self.students
+    class Meta:
+        verbose_name = "Настройки достижения"
+        verbose_name_plural = "Настройки достижения"
