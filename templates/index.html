@@ -271,41 +271,19 @@
 			<div class="single-item-carousel owl-carousel owl-theme">
 				
 				<!-- Testimonial Block Two -->
+				{% for osp in products %}
 				<div class="testimonial-block">
 					<div class="inner-box">
 						<div class="image-box">
 							<div class="quote-icon flaticon-quote-5"></div>
 							<div class="image">
-								<img src="{% static 'images/resource/author-1.jpg' %}" alt="" />
+								<img src="{{ osp.parent_images.url }}" alt="" />
 							</div>
 						</div>
-						<div class="text">Наполни его третьим существом и мясом, благословенным, пустым, плодом, собранным тобой, они две воды, собранные утром, больше, увидишь, было семя. Вопреки распространенному мнению, Lorem Ipsum — это не просто случайный текст. Он уходит корнями в произведение классической латинской литературы 45 г. до н.э., что делает его</div>
+						<div class="text">{{ product.description }}</div>
 					</div>
 				</div>
-				
-				<!-- Testimonial Block Two -->
-				<div class="testimonial-block">
-					<div class="inner-box">
-						<div class="image-box">
-							<div class="image">
-								<img src="{% static 'images/resource/author-5.jpg' %}" alt="" />
-							</div>
-						</div>
-						<div class="text">Наполни его третьим существом и мясом, благословенным, пустым, плодом, собранным тобой, они две воды, собранные утром, больше, увидишь, было семя. Вопреки распространенному мнению, Lorem Ipsum — это не просто случайный текст. Он уходит корнями в произведение классической латинской литературы 45 г. до н.э., что делает его</div>
-					</div>
-				</div>
-				
-				<!-- Testimonial Block Two -->
-				<div class="testimonial-block">
-					<div class="inner-box">
-						<div class="image-box">
-							<div class="image">
-								<img src="{% static 'images/resource/author-5.jpg' %}" alt="" />
-							</div>
-						</div>
-						<div class="text">Наполни его третьим существом и мясом, благословенным, пустым, плодом, собранным тобой, они две воды, собранные утром, больше, увидишь, было семя. Вопреки распространенному мнению, Lorem Ipsum — это не просто случайный текст. Он уходит корнями в произведение классической латинской литературы 45 г. до н.э., что делает его</div>
-					</div>
-				</div>
+				{% endfor %}
 				
 			</div>
 			

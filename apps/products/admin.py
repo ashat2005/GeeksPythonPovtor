@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.products.models import Products, Currency , Contact
+from apps.products.models import Products, Currency , Contact , OSP
 # Register your models here.
 
 class ProductsFilterAdmin(admin.ModelAdmin):
@@ -16,3 +16,4 @@ class ContactFilterAdmin(admin.ModelAdmin):
 admin.site.register(Products, ProductsFilterAdmin)
 admin.site.register(Contact, ContactFilterAdmin)
 admin.site.register(Currency)
+admin.site.register(OSP)

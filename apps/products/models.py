@@ -74,3 +74,19 @@ class Contact(models.Model):
     class Meta:
         verbose_name = "Контакты"
         verbose_name_plural = "Контакты"
+
+class OSP(models.Model):
+    parent_images = models.ImageField(
+        upload_to= 'parent_images/',
+        verbose_name="Ваша фото",
+        blank=True,null=True
+    )
+    descriptions = models.TextField(
+        verbose_name="Ваш отзыв",
+        blank=True,null=True
+    )
+    def __str__(self) -> str:
+        return "Отзывы"
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
