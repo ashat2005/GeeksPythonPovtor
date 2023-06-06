@@ -52,10 +52,10 @@
 							<div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
 								<div class="inner-box">
 									<div class="image">
-										<a href="course-detail.html"><img src="{{course.product_image.url}}" alt="" /></a>
+										<a href="{% url 'product_detail' course.id %}"><img src="{{course.product_image.url}}" alt="" height="10px"/></a>
 									</div>
 									<div class="lower-content">
-										<h5><a href="course-detail.html">{{course.title}}</a></h5>
+										<h5><a style="color: black;" href="{% url 'product_detail' course.id %}">{{course.title}}</a></h5>
 										<div class="text">{{course.description | truncatewords:18}}</div>
 										<div class="clearfix">
 											{% if students %}
